@@ -36,7 +36,45 @@ nav > ul {
 
     /* Eliminar los estilos de lista predeterminados */
     list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
 
+}
+
+section > form {
+
+    display : grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+}
+
+/* #referencias {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+}
+
+#referencias.subtitle {
+    grid-column: 1 / -1;
+} */
+
+#referencias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#referencias .subtitle {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+#referencias.testimonio{
+    flex: 1;
 }
 
 section {
