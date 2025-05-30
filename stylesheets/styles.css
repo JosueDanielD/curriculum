@@ -1,39 +1,48 @@
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1{
-    text-align: center;
-    font-weight: bold;
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
     font-family: "Tangerine", serif;
 }
 
-#photo{
-    width: 8vw;
-    height: auto;
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
 }
 
-.subtitle {
-
-    /* Color del texto en rgba */
-    color: rgb(151 156 165 / 0.89);
-
-    /* Transformación del texto a mayúsculas */
-    text-transform: uppercase;
-}
-
-footer p {
-
-    /* Alineación del texto a la derecha */
-    text-align: right;
-
-    /* Estilo de fuente itálica */
-    font-style: italic;
-
+nav {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 nav > ul {
-
     /* Eliminar los estilos de lista predeterminados */
     list-style: none;
     display: flex;
@@ -44,129 +53,165 @@ nav > ul {
 
 }
 
-section > form {
-
-    display : grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-
+nav a {
+    color: #2c3e50;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
-/* #referencias {
+nav a:hover {
+    background-color: #2c3e50;
+    color: white;
+}
+
+main {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 1rem;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-#referencias.subtitle {
-    grid-column: 1 / -1;
-} */
+/* Secciones de la columna izquierda */
+#resumen,
+#habilidades,
+#educacion {
+    grid-column: 1;
+}
 
+/* Secciones de la columna derecha */
+#experiencia,
+#proyectos,
 #referencias {
-    display: flex;
-    flex-wrap: wrap;
+    grid-column: 2;
+}
+
+/* Secciones que ocupan todo el ancho */
+#contacto,
+#formulario,
+#video {
+    grid-column: 1 / -1;
+}
+
+/* Mejoras visuales para las secciones */
+section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    border-left: 4px solid #3498db;
+}
+
+/* Estilo para las habilidades */
+#habilidades ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+    padding: 0;
+}
+
+#habilidades li {
+    background-color: #f8f9fa;
+    padding: 0.8rem;
+    border-radius: 4px;
+    list-style: none;
+    border-left: 3px solid #3498db;
+}
+
+/* Mejoras para la sección de experiencia */
+#experiencia {
+    background-color: #fff;
+}
+
+/* Estilo para tablas */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 1.5rem 0;
+}
+
+th, td {
+    padding: 1rem;
+    border: 1px solid #eee;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    text-align: left;
+}
+
+/* Modificar la sección de referencias para ocupar todo el ancho */
+#referencias {
+    grid-column: 1 / -1;
 }
 
 #referencias .subtitle {
-    flex-basis: 100%;
-    text-align: center;
+    margin-bottom: 2rem;
 }
 
-#referencias.testimonio{
-    flex: 1;
+.testimonios-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
 }
 
-section {
-
-    /* borde de grosor 0.2 en puntos, estilo sólido y color hexadecimal #cedddd  */
-    border: 0.2pt solid #cedddd;
-
-    /* margen (espacio externo) superior, derecho, abajo e izquierda */
-    margin: 4px 2px 8px 2px;
-
-    /* relleno (espacio interno) de
-    1.5% en la parte superior e inferior y
-    0.8% a los lados derecho e izquierdo. */
-
-    padding: 1.5% 0.8%;
-
-    /* Margen inferior ajustado */
-    margin-bottom: 1.2rem;
-
+.testimonio {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    height: 100%; /* Asegura que todos los testimonios tengan la misma altura */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-
-.social-links {
-    margin: 1rem 0;
-}
-
-.social-links a {
-    margin-right: 1rem;
-    text-decoration: none;
-    color: #0066cc;
-}
-
-.form-group {
-    margin-bottom: 1rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.form-group textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-button[type="submit"] {
-    background-color: #0066cc;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: #0052a3;
-}
-
-.map-container {
-    position: relative;
-    overflow: hidden;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
-    margin: 2rem 0;
-}
-
-.map-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-.contact-image {
-    margin: 2rem 0;
-}
-
-.contact-image img {
-    width: 100%;
+/* Formulario de contacto */
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
     max-width: 600px;
-    height: auto;
-    border-radius: 8px;
-    display: block;
     margin: 0 auto;
+}
+
+input, textarea {
+    padding: 1rem;
+    border: 2px solid #eee;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Ajustar el diseño responsive */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    #resumen,
+    #habilidades,
+    #educacion,
+    #experiencia,
+    #proyectos,
+    #referencias {
+        grid-column: 1;
+    }
+
+    #habilidades ul {
+        grid-template-columns: 1fr;
+    }
+
+    #referencias {
+        grid-template-columns: 1fr;
+    }
 }
